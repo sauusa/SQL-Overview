@@ -91,15 +91,15 @@ For creating and modifying Database objects such as table, indexes and users.
     FROM films WHERE extract(year from release_date) between 1995 and 2000;
     
     SELECT d.first_name, d.last_name, sum(r.domestic_takings + r.international_takings) as sum_rev
-      FROM directors d, movie m, revenues r
-	   WHERE d.director_id = m.director_id
-	     AND m.movie_id    = r.movie_id
-	     AND r.domestic_takings is not null
-	     AND r.international_takings is not null
-	   GROUP BY d.first_name, d.last_name
-     HAVING sum_rev > 500
-	   ORDER BY sum_rev desc
-	   LIMIT 10;
+    FROM directors d, movie m, revenues r
+    WHERE d.director_id = m.director_id
+      and m.movie_id = r.movie_id
+      and r.domestic_takings is NOT NULL
+      and r.international_takings is NOT NULL
+    GROUP BY d.first_name, d.last_name
+    HAVING d.last_name is NOT NULL
+    ORDER BY sum_rev desc
+    LIMIT 10;
   
 ### DCL - Data Control Language
 
