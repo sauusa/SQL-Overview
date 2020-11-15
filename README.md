@@ -56,7 +56,7 @@ For creating and modifying Database objects such as table, indexes and users.
     ALTER TABLE table_1 RENAME COLUMN notes TO sample_notes;
     
   
-### DDL - Data Manipulation Language
+### DML - Data Manipulation Language
 
   For inserting, modifying and deleting records in DB tables.
 
